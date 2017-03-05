@@ -5,8 +5,8 @@
  2: Blue
  */
 
-var GRID_WIDTH = 2;
-var GRID_HEIGHT = 2;
+var GRID_WIDTH = 15;
+var GRID_HEIGHT = 15;
 var TILE_PADDING = 2;
 var RED = "#D55336";
 var DARK_RED = "#AB422B";
