@@ -345,11 +345,11 @@ $(window).resize(resizeFunction);
 $(window).mouseup(function (event) {
     mouseDown = false;
 });*/
-$(window).on('mousewheel', function(event) {
+/*$(window).on('mousewheel', function(event) {
     if (event.deltaY != 0)
         $("#grid").panzoom("zoom", event.deltaY < 0, {focal: event});
 });
-
+*/
 $().ready(function () {
     console.log("Welcome to GOLAD Anywhere V0.0.1!");
 
@@ -409,13 +409,13 @@ $().ready(function () {
 
     updateGrid();
 
-    /*$("#grid").panzoom({
+    $("#grid").panzoom({
         which: 2,
         transition: true,
         easing: "ease-in-out",
         contain: false,
         minScale: 1,
-    });*/
+    });
 });
 
 var w = new Hammer(document.getElementById("grid"));
