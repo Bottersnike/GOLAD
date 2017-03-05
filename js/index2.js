@@ -5,8 +5,8 @@
  2: Blue
  */
 
-var GRID_WIDTH = 10;
-var GRID_HEIGHT = 10;
+var GRID_WIDTH = 15;
+var GRID_HEIGHT = 15;
 var TILE_PADDING = 2;
 var RED = "#D55336";
 var DARK_RED = "#AB422B";
@@ -379,7 +379,19 @@ $().ready(function () {
         gridTiles.push([]);
 
         for (x = 0; x < GRID_WIDTH; x++) {
-            gridTiles[y].push({currentState: gridTiles[GRID_HEIGHT/2-(y-GRID_HEIGHT/2)-1][GRID_WIDTH - x -1].currentState, nextState: 0});
+            switch (gridTiles[GRID_HEIGHT/2-(y-GRID_HEIGHT/2)-1][GRID_WIDTH - x -1].currentState) {
+                case 0:
+                    val = 0;
+                    break;
+                case 1:
+                    val = 2;
+                    break;
+                case 2:
+                    val = 1;
+                    break;
+            }
+
+            gridTiles[y].push({currentState: val, nextState: 0});
         }
     }
 
@@ -395,13 +407,13 @@ $().ready(function () {
 
     updateGrid();
 
-    $("#grid").panzoom({
+    /*$("#grid").panzoom({
         which: 2,
         transition: true,
         easing: "ease-in-out",
         contain: false,
         minScale: 1
-    });
+    });*/
 });
 
 var w = new Hammer(document.getElementById("grid"));
