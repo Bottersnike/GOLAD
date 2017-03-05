@@ -237,8 +237,8 @@ html body .show01 .tile .inner:after {
     display: inline-block;
     margin-left: 8px;
     margin-right: 8px;
-    min-width: 24px;
-    min-height: 24px;
+    min-width: 32px;
+    min-height: 32px;
 
     width: 5vmin;
     height: 5vmin;

@@ -424,7 +424,7 @@ w.on("tap", function (ev) {
                 gridTiles[x][y].currentState = currentPlayer;
             else
                 gridTiles[x][y].currentState = 0;
-            
+
             changedThisDrag.push({x: x, y: y});
 
             lastMove.to = gridTiles[x][y].currentState;
