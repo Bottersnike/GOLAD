@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <title>GOLAD Anywhere</title>
+
+
+    <style id="tempcss">.odd  .tile-1 .inner { background-color: #c24b31; }.even .tile-1 .inner { background-color: #d55336; }.odd  .tile-2 .inner { background-color: #30a7c2; }.even .tile-2 .inner { background-color: #35b8d5; }</style>
+    <style id="tempcss2">.odd  .next-1 { background-color: #c24b31; }.even .next-1 { background-color: #d55336; }.odd  .next-2 { background-color: #30a7c2; }.even .next-2 { background-color: #35b8d5; }</style>
+
+    <style id="tileSize">.tile.marked .inner { border-width: 5px }</style>
+
+</head>
+<body>
+    <!--<div id="mainGrid"></div>-->
+
+
+    <div id="gameContainer">
+        <div id="gameWrapper">
+            <div id="sideBar">
+                <div id="ruleset" class="fbrow">B0/S0</div>
+                <div id="infoA" class="fbrow flash">
+                    <div class="rr1">Player 1</div>
+                    <div class="rr2"><div class="rr2t">Human</div><div class="rr2t2"><div class="rr2s"></div><div id="p1sc" class="rr2sc">x0</div></div></div>
+                </div>
+                <div id="infoB" class="fbrow">
+                    <div class="rr1">Player 2</div>
+                    <div class="rr2"><div class="rr2t">AI</div><div class="rr2t2"><div class="rr2s"></div><div id="p2sc" class="rr2sc">x0</div></div></div>
+                </div>
+                <div id="passiveInfo" class="fbrow">
+                    <div id="hint">Tap a living cell to kill it,<br>or tap a dead cell to birth it.</div>
+                    <br>
+                    <br>
+                    <div id="turn">26A/26A</div>
+                    <br>
+                    <div id="buttons">
+                        <div class="undo-btn btn" onclick="undoButton();"></div>
+                        <div class="play-btn btn" onclick="playButton();"><div id="play-lock" class="lock"></div></div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="mainGame">
+                <!--<canvas id="gameCanvas"></canvas>-->
+
+                <div id="tableWrapper">
+                    <table data-grid="board" id="grid" cellpadding="0" cellspacing="0"></table>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            <div class="reset-btn btn" onclick="$('#grid').panzoom('reset');"></div>
+            <div class="close-btn btn"></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="vendor/js/jquery-3.1.1.min.js"></script>
+    <script src="vendor/js/jquery.mousewheel.min.js"></script>
+
+    <script src="vendor/js/hammer.min.js"></script>
+    <script src="vendor/js/hammer-time.min.js"></script>
+
+    <script src="vendor/js/jquery.panzoom.min.js"></script>
+    <script src="js/index2.js"></script>
+</body>
+</html>
