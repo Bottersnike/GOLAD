@@ -253,6 +253,8 @@ function containsObject(obj, list) {
 function playButton() {
     if (turnMade) {
         turnMade = false;
+        lastMove.canUse = false;
+
         $("#play-lock").removeClass("hide-lock");
         gameOfLifeTick();
 
@@ -407,13 +409,13 @@ $().ready(function () {
 
     updateGrid();
 
-    $("#grid").panzoom({
+    /*$("#grid").panzoom({
         which: 2,
         transition: true,
         easing: "ease-in-out",
         contain: false,
-        minScale: 1
-    });
+        minScale: 1,
+    });*/
 });
 
 var w = new Hammer(document.getElementById("grid"));
@@ -449,3 +451,9 @@ w.on("tap", function (ev) {
         }
     }
 });
+
+
+var handleTouchyPinch = function (e, $target, data) {
+    $target.css({'webkitTransform':'scale(' + data.scale + ',' + data.scale + ')'});
+};
+$('#grid').bind('touchy-pinch', handleTouchyPinch);
