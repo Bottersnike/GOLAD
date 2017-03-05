@@ -454,6 +454,7 @@ w.on("tap", function (ev) {
 
 
 var handleTouchyPinch = function (e, $target, data) {
+    alert(data.scale);
     $target.css({'webkitTransform':'scale(' + data.scale + ',' + data.scale + ')'});
 };
 $('#grid').bind('touchy-pinch', handleTouchyPinch);
