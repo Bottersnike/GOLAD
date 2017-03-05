@@ -5,8 +5,8 @@
  2: Blue
  */
 
-var GRID_WIDTH = 15;
-var GRID_HEIGHT = 15;
+var GRID_WIDTH = 2;
+var GRID_HEIGHT = 2;
 var TILE_PADDING = 2;
 var RED = "#D55336";
 var DARK_RED = "#AB422B";
@@ -407,13 +407,13 @@ $().ready(function () {
 
     updateGrid();
 
-    /*$("#grid").panzoom({
+    $("#grid").panzoom({
         which: 2,
         transition: true,
         easing: "ease-in-out",
         contain: false,
         minScale: 1
-    });*/
+    });
 });
 
 var w = new Hammer(document.getElementById("grid"));
